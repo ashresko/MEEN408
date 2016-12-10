@@ -8,6 +8,6 @@ int main()
 	for (int i = 0; i < 30; i++){
 		std::cout << "(Voltage, Raw) : (" << myADC.readVoltage() << ", " <<  myADC.readRaw() << ")" << std::endl;
 	}
-	std::cout << "ADC Emd" << std::endl;
+	std::cout << "ADC End" << std::endl;
 	return 0;
 }

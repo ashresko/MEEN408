@@ -64,6 +64,7 @@ GPIO::~GPIO() {
     ofs.close();           // and close the file
   }
 }
+
 void GPIO::setValue(int valuee) {
   std::ofstream ofs;
   ofs.open(GPIOValueFile.c_str(), std::ios::trunc);

@@ -27,9 +27,9 @@ PWM::PWM(int PWMNumberr, int Periodd, int DutyCyclee) {
   PWMEnableFile = ss.str();                                 //
   ss.clear();                                               //
   ss.str(std::string());                                    //
-  std::string PWMSlots =  "/sys/devices/platform/bone_capemgr/slots";
-  
+
   // Check if the PWM device is in slots
+  std::string PWMSlots =  "/sys/devices/platform/bone_capemgr/slots";
   std::ofstream ofs;
   ofs.open(PWMSlots.c_str(),
            std::ios::app);
@@ -40,7 +40,7 @@ PWM::PWM(int PWMNumberr, int Periodd, int DutyCyclee) {
     ofs << "BB-PWM2";  // write pin number to export file
   }
   ofs.close();  // and close the file
- 
+
   // Export the PWM  Number (this will make the pwm directory we can then use)
   ofs.open(std::string("/sys/class/pwm/pwmchip0/export").c_str(),
            std::ios::app);
@@ -129,7 +129,7 @@ void PWM::enable(int enablee) {
 int PWM::getPeriod() {
   //  std::ifstream ifs;
   //  int PeriodValue = 0;
-  //  ifs.open("/sys/class/pwm/pwmchip0/pwm0/period", std::ios::trunc);
+  //  ifs.open(PWMPeriodFile.c_str());
   //  if (!(ifs.is_open())) {
   //    std::cout << "Cannot get the PWM Period.\n";
   //    // throw exception;
@@ -143,7 +143,7 @@ int PWM::getPeriod() {
 int PWM::getDutyCycle() {
   //  std::ifstream ifs;
   //  int DutyCycleValue = 0;
-  //  ifs.open(PWMDutyCycleFile.c_str(), std::ios::trunc);
+  //  ifs.open(PWMDutyCycleFile.c_str());
   //  if (!(ifs.is_open())) {
   //    std::cout << "Cannot get the PWM Duty Cycle.\n";
   //    // throw exception;
@@ -157,7 +157,7 @@ int PWM::getDutyCycle() {
 std::string PWM::getPolarity() {
   //  std::ifstream ifs;
   //  std::string PolarityValue;
-  //  ifs.open(PWMPolarityFile.c_str(), std::ios::trunc);
+  //  ifs.open(PWMPolarityFile.c_str());
   //  if (!(ifs.is_open())) {
   //    std::cout << "Cannot get the PWM Polarity.\n";
   //    // throw exception;
