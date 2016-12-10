@@ -1,40 +1,45 @@
 #ifndef DCMOTOR_H
 #define DCMOTOR_H
 
-#include <unistd.h>
+#include "EQEP.h"
+#include "PWM.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "PWM.h"
-#include "EQEP.h"
+#include <unistd.h>
 
 class DCMOTOR {
- private:
-  //Motor Parameters
-  PWM motorPWM;
-  EQEP motorEQEP;
-  float gear_r;  
-  //Angle Tracking
+private:
+  // Motor Parameters
+  PWM motorPWM;   // pwm to do basic control signal to motor
+  EQEP motorEQEP; // for reading back the angle
+  double gear_r;  // the motor's gear ratio
+  double k_emf;   // emf motor constant  w = k_emf * Voltage
+  double k_t;     // torque constant     Torque = k_t * current
+  // Angle Tracking
   long int AbsCNT;
   long int AbsCNT_Prev;
   long int RelCNT;
-  float angle;
-  //Control Parameters
+  double angle;
+  // Control Parameters
   int motorOn;
- public:
+
+public:
   DCMOTOR(int PWMNumberr, int EQEPNumberr);
   ~DCMOTOR();
-  void setAngle(int anglee);
-  int  getAngle();
-  void setAngleOffset(int offsett);
-  int  getAngleOffset();
-  void setVelocity( int torquee);
-  int  getVelocity();
+  // The below are removed from DCMOTOR as they are really more of
+  // DCMOTOR_CONTROLLER issue
+  //  void setAngle(int anglee);
+  int getAngle();
+  //  void setAngleOffset(int offsett);
+  //  int  getAngleOffset();
+  //  void setVelocity( int torquee);
+  //  int  getVelocity();
   void setPWMPeriod();
-  int  getPWMPeriod();
+  int getPWMPeriod();
   void setPWMDutyCycle();
-  int  getPWMDutyCycle();
+  int getPWMDutyCycle();
   void enable(int enablee);
 };
 
