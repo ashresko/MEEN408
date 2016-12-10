@@ -33,11 +33,11 @@ public:
   //  int  getAngleOffset();
   //  void setVelocity( int torquee);
   //  int  getVelocity();
-  void setPWMPeriod( int Periodd);
+  void setPWMPeriod(int Periodd);
   int getPWMPeriod();
-  void setPWMDutyCycle( int DutyCyclee);
+  void setPWMDutyCycle(int DutyCyclee);
   int getPWMDutyCycle();
-  void enable(int enablee); //disables or enables the motors
+  void enable(int enablee); // disables or enables the motors
 };
 
 #endif
