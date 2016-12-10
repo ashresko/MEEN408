@@ -4,7 +4,7 @@ PWM servoPWM  // (pin_number, period, duty_cycle)
 
 SERVOMOTOR::SERVOMOTOR()
 :servoPWM(2, 10000000, 0)
-{
+{}
 
 SERVOMOTOR::~SERVOMOTOR() {
 }
