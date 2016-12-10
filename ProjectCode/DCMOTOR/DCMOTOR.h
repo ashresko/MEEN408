@@ -25,14 +25,7 @@ private:
 public:
   DCMOTOR(int PWMNumberr, int EQEPNumberr);
   ~DCMOTOR();
-  // Some of the below are removed from DCMOTOR as they are really more of
-  // DCMOTOR_CONTROLLER task
-  //  void setAngle(int anglee);
   int getAngle();
-  //  void setAngleOffset(int offsett);
-  //  int  getAngleOffset();
-  //  void setVelocity( int torquee);
-  //  int  getVelocity();
   void setPWMPeriod(int Periodd);
   int getPWMPeriod();
   void setPWMDutyCycle(int DutyCyclee);

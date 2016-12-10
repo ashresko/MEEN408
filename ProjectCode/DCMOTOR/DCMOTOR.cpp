@@ -12,12 +12,18 @@ DCMOTOR::DCMOTOR(int PWMNumberr, int EQEPNumberr)
 int DCMOTOR::getAngle() {
   return motorEQEP.readPosition(); // return the current EQEP position.
 }
-void DCMOTOR::setPWMPeriod(int Periodd) { motorPWM.setPWMPeriod(Periodd); }
-int DCMOTOR::getPWMPeriod() { return motorPWM.getPWMPeriod(); }
+void DCMOTOR::setPWMPeriod(int Periodd) {
+  motorPWM.setPWMPeriod(Periodd); // set the pwm period in the pwm object
+}
+int DCMOTOR::getPWMPeriod() {
+  return motorPWM.getPWMPeriod(); // get the pwm period from the pwm object
+}
 void DCMOTOR::setPWMDutyCycle(int DutyCyclee) {
   motorPWM.setPWMDutyCycle(DutyCyclee);
 }
-int DCMOTOR::getPWMDutyCycle() { return motorPWM.getPWMDutyCycle(); }
+int DCMOTOR::getPWMDutyCycle() {
+  return motorPWM.getPWMDutyCycle(); // same as getPWMPeriod above
+}
 void DCMOTOR::enable(int enablee) {
   if (enablee != 0) { // so long as the input is not zero, we accept it enable
     enablee = 1;
