@@ -1,17 +1,4 @@
 #include "DCMOTOR.h"
-//Motor Parameters
-PWM motorPWM;
-EQEP motorEQEP;
-//Angle Tracking
-long int AbsCNT;
-long int AbsCNT_Prev;
-long int RelCNT;
-float angle;
-//Control Parameters
-float e;
-float e_i;
-float e_d;
-int motorOn;
 
 DCMOTOR::DCMOTOR(int PWMNumberr, int EQEPNumberr)
 	:motorPWM(PWMNumberr,1000000,0), motorEQEP(EQEPNumberr)

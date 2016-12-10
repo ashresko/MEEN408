@@ -16,7 +16,7 @@ public:
   SERVOMOTOR();
   ~SERVOMOTOR();
   int getAngle();
-  void setAngle();
+  void setAngle(int Anglee);
 
 };
 
