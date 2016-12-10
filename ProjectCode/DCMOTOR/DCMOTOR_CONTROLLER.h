@@ -18,7 +18,8 @@ class DCMOTOR_CONTROLLER{
     float k_p;
     float k_d;
     float k_i;
-
+    //DC Motor
+    DCMOTOR motor;
   public:
     DCMOTOR_CONTROLLER();
     ~DCMOTOR_CONTROLLER();

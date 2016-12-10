@@ -13,12 +13,9 @@ float e_i;
 float e_d;
 int motorOn;
 
-DCMOTOR::DCMOTOR(int PWMNumberr, int EQEPNumberr){
-	//Set up the PWM
-	motorPWM = PWM(PWMNumberr, 1000000, 0);
-	motorEQEP
-}
-
+DCMOTOR::DCMOTOR(int PWMNumberr, int EQEPNumberr)
+	:motorPWM(PWMNumberr,1000000,0), motorEQEP(EQEPNumberr)
+	{}
 DCMOTOR::void setAngle(int anglee);
 DCMOTOR::int  getAngle();
 DCMOTOR::void setAngleOffset(int offsett);
