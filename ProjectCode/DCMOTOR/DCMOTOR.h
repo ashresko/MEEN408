@@ -20,10 +20,6 @@ class DCMOTOR {
   long int RelCNT;
   float angle;
   //Control Parameters
-  float e;
-  float e_i;
-  float e_d;
-  float e_prev;
   int motorOn;
  public:
   DCMOTOR(int PWMNumberr, int EQEPNumberr);
