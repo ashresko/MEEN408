@@ -9,7 +9,7 @@
 
 class EQEP {
  private:
-  // EQEP parameters
+  // ADC parameters
   int EQEPPosition;
   int EQEPNumber;
   // filename strings
