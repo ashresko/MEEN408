@@ -1,14 +1,4 @@
 #include "DCMOTOR.h"
-// Motor Parameters
-PWM motorPWM;   // pwm to do basic control signal to motor
-EQEP motorEQEP; // for reading back the angle
-double gear_r;  // the motor's gear ratio
-double k_emf;   // emf motor constant  w = k_emf * Voltage
-double k_t;     // torque constant     Torque = k_t * current
-// Angle Tracking
-double angle; // not used
-// Control Parameters
-int motorOn;
 
 DCMOTOR::DCMOTOR(int PWMNumberr, int EQEPNumberr)
     : motorPWM(PWMNumberr, 1000000, 0), motorEQEP(EQEPNumberr) {
