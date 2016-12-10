@@ -18,26 +18,26 @@ private:
   double k_emf;   // emf motor constant  w = k_emf * Voltage
   double k_t;     // torque constant     Torque = k_t * current
   // Angle Tracking
-
+  double angle;
   // Control Parameters
   int motorOn;
 
 public:
   DCMOTOR(int PWMNumberr, int EQEPNumberr);
   ~DCMOTOR();
-  // The below are removed from DCMOTOR as they are really more of
-  // DCMOTOR_CONTROLLER issue
+  // Some of the below are removed from DCMOTOR as they are really more of
+  // DCMOTOR_CONTROLLER task
   //  void setAngle(int anglee);
   int getAngle();
   //  void setAngleOffset(int offsett);
   //  int  getAngleOffset();
   //  void setVelocity( int torquee);
   //  int  getVelocity();
-  void setPWMPeriod();
+  void setPWMPeriod( int Periodd);
   int getPWMPeriod();
-  void setPWMDutyCycle();
+  void setPWMDutyCycle( int DutyCyclee);
   int getPWMDutyCycle();
-  void enable(int enablee);
+  void enable(int enablee); //disables or enables the motors
 };
 
 #endif
