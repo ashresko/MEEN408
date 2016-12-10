@@ -6,8 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <PWM.h>
-#include <EQEP.h>
+#include "DCMOTOR.h"
 
 class DCMOTOR_CONTROLLER{
   private:
@@ -23,7 +22,7 @@ class DCMOTOR_CONTROLLER{
   public:
     DCMOTOR_CONTROLLER();
     ~DCMOTOR_CONTROLLER();
-
+    void run();
 
 
 };

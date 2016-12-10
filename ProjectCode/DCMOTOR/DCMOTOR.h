@@ -14,6 +14,7 @@ class DCMOTOR {
   //Motor Parameters
   PWM motorPWM;
   EQEP motorEQEP;
+  float gear_r;  
   //Angle Tracking
   long int AbsCNT;
   long int AbsCNT_Prev;
