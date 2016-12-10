@@ -18,10 +18,7 @@ private:
   double k_emf;   // emf motor constant  w = k_emf * Voltage
   double k_t;     // torque constant     Torque = k_t * current
   // Angle Tracking
-  long int AbsCNT;
-  long int AbsCNT_Prev;
-  long int RelCNT;
-  double angle;
+
   // Control Parameters
   int motorOn;
 

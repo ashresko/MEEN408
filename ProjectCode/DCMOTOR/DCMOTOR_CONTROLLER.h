@@ -11,13 +11,18 @@
 class DCMOTOR_CONTROLLER {
 private:
   // Controller parameters
-  float e;
-  float e_i;
-  float e_d;
-  float e_prev;
-  float k_p;
-  float k_d;
-  float k_i;
+  double e;
+  double e_i;
+  double e_d;
+  double e_prev;
+  double k_p;
+  double k_d;
+  double k_i;
+  // motor Tracking
+  long int AbsCNT;
+  long int AbsCNT_Prev;
+  long int RelCNT;
+  double angle;
   // DC Motor
   DCMOTOR motor;
 
