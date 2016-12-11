@@ -1,34 +1,26 @@
 #include "SERVOMOTOR.h"
 
-PWM servoPWM  // (pin_number, period, duty_cycle)
-
 SERVOMOTOR::SERVOMOTOR()
 :servoPWM(2, 10000000, 0)
 {}
 
-SERVOMOTOR::~SERVOMOTOR() {
-}
-SERVOMOTOR::int getAngle();
+// SERVOMOTOR::int getAngle();
 
-SERVOMOTOR::void setAngle(int Anglee) {
+void SERVOMOTOR::setAngle(int Anglee) {
   if ((Anglee<theta_high) && (Anglee>theta_low)) {
     Angle = Anglee;
+    int pulsewidth = 0;
+    pulsewidth = (upper_limit-lower_limit)/(theta_high-theta_low) * Angle + lower_limit;
+    servoPWM.setPWMDutyCycle(pulsewidth);
   } else {
-    // error
+    std::cout << "Angle could not be set"; // error
   }
-
-  int pulsewidth = 0;
-  pulsewidth = (upper_limit-lower_limit)/(theta_high-theta_low) * Angle + lower_limit;
-
-  servoPWM.setPWMPeriod(upper_limit);
-  servoPWM.setPWMDutyCycle(pulsewidth);
-
 }
 
 SERVOMOTOR::void gripperOpen() {
-
+  SERVOMOTOR::setAngle(theta_high)
 }
 
 SERVOMOTOR::void gripperClose() {
-
+  SERVOMOTOR::setAngle(theta_low)
 }
